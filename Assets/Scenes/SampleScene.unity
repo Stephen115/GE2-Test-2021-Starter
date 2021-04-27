@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 232616795}
   - component: {fileID: 232616794}
   - component: {fileID: 232616793}
+  - component: {fileID: 232616796}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -219,6 +220,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232616791}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &232616796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232616791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f4e7cc5e9e7cbb4a948b6c906a3b870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivot: {fileID: 232616791}
 --- !u!1 &318523212 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3627371103750170129, guid: b471fff3b0213bb4882085e357ee2c4e, type: 3}
@@ -695,7 +709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181318721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.47, z: -0.994}
+  m_LocalPosition: {x: 0, y: 0.866, z: -0.576}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 232616792}
@@ -723,6 +737,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1296423583}
+  - component: {fileID: 1296423585}
+  - component: {fileID: 1296423584}
   m_Layer: 0
   m_Name: ballAttach
   m_TagString: Untagged
@@ -744,6 +760,32 @@ Transform:
   m_Father: {fileID: 1461995659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1296423584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296423582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c10eae44ea2cd94e8a60f2665356877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 0}
+--- !u!135 &1296423585
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296423582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1461995654
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,6 +992,8 @@ GameObject:
   - component: {fileID: 1503941573}
   - component: {fileID: 1503941572}
   - component: {fileID: 1503941571}
+  - component: {fileID: 1503941575}
+  - component: {fileID: 1503941574}
   m_Layer: 0
   m_Name: dog
   m_TagString: Untagged
@@ -972,7 +1016,7 @@ MonoBehaviour:
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
-  targetGameObject: {fileID: 0}
+  targetGameObject: {fileID: 318523212}
   target: {x: 0, y: 0, z: 0}
 --- !u!114 &1503941572
 MonoBehaviour:
@@ -1003,10 +1047,34 @@ MonoBehaviour:
   acceleration: {x: 0, y: 0, z: 0}
   velocity: {x: 0, y: 0, z: 0}
   mass: 1
-  damping: 0.01
-  banking: 0.1
+  damping: 2.5
+  banking: 0
   maxSpeed: 5
   maxForce: 10
+--- !u!114 &1503941574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503941570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4798574c573b7448ea10c1fa7fe466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1503941575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503941570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86af81e63a42b164faab2b2f9fcfedcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1503941576
 Transform:
   m_ObjectHideFlags: 0

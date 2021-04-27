@@ -35,6 +35,7 @@ public class Boid : MonoBehaviour
 
     public Vector3 SeekForce(Vector3 target)
     {
+        target.y = 0;
         Vector3 desired = target - transform.position;
         desired.Normalize();
         desired *= maxSpeed;
